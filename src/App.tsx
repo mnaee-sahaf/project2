@@ -12,11 +12,15 @@ import { Lessons } from './pages/Lessons';
 import { Practice } from './pages/Practice';
 import { useAuth } from './contexts/AuthContext';
 import { Resources } from './pages/Resources';
+import { Footer } from './components/Footer';
+import { Header } from './components/Header';
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   
   return (
+    <div className="flex flex-1 flex-col">
+    <Header/>
     <div className="min-h-screen bg-gray-50 flex">
       <Navigation />
       <main className="flex-1 p-6 md:p-8 pb-24 md:pb-8">
@@ -25,6 +29,10 @@ function AppLayout({ children }: { children: React.ReactNode }) {
         </div>
       </main>
       {!user && <AuthPrompt />}
+      </div>
+      <footer  className="sticky top-[100vh] flex">
+      <Footer />
+      </footer>
     </div>
   );
 }
