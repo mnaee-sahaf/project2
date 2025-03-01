@@ -7,10 +7,253 @@ import type { Course } from '../types';
 // Sample courses data
 const sampleCourses: Course[] = [
   {
+    id: '5',
+    title: 'Python Fundemntals',
+    description: 'Learn the fundamental concepts of python and its applications.',
+    image: 'https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    difficulty: 'beginner',
+    completed: false,
+    lessons: [
+      {
+        id: '1-1',
+        courseId: '1',
+        title: 'Python Basics',
+        description: 'Learn the fundamental concepts of Python, its history and its applications.',
+        category: 'basics',
+        difficulty: 'beginner',
+        completed: false,
+        exercises: [
+          {
+            id: '1-1-1',
+            lessonId: '1-1',
+            title: 'Understanding Python Programming Concepts',
+            description: 'Visual explanation of key Python concepts and terminology.',
+            type: 'visual',
+            completed: false,
+            content: `
+              <h2>What is Machine Learning?</h2>
+              <p>Machine Learning is a subset of artificial intelligence that focuses on developing systems that can learn and improve from experience without being explicitly programmed.</p>
+              
+              <h2>Key Concepts</h2>
+              <ul>
+                <li><strong>Supervised Learning:</strong> The algorithm learns from labeled training data</li>
+                <li><strong>Unsupervised Learning:</strong> The algorithm finds patterns in unlabeled data</li>
+                <li><strong>Reinforcement Learning:</strong> The algorithm learns through trial and error</li>
+              </ul>
+
+              <h2>Applications</h2>
+              <p>Machine learning is used in various fields:</p>
+              <ul>
+                <li>Image and Speech Recognition</li>
+                <li>Natural Language Processing</li>
+                <li>Recommendation Systems</li>
+                <li>Autonomous Vehicles</li>
+                <li>Medical Diagnosis</li>
+              </ul>
+            `
+          },
+          {
+            id: '1-1-2',
+            lessonId: '1-1',
+            title: 'Exploring Data Patterns',
+            description: 'Interactive visualization to explore how machine learning identifies patterns in data.',
+            type: 'interactive',
+            completed: false
+          },
+          {
+            id: '1-1-3',
+            lessonId: '1-1',
+            title: 'ML Fundamentals Quiz',
+            description: 'Test your knowledge of basic machine learning concepts and terminology.',
+            type: 'quiz',
+            completed: false,
+            quiz: {
+              id: 'q1',
+              questions: [
+                {
+                  id: 'q1_1',
+                  text: 'What is the main difference between supervised and unsupervised learning?',
+                  options: [
+                    'Supervised learning requires a GPU, unsupervised doesn\'t',
+                    'Supervised learning uses labeled data, unsupervised learning uses unlabeled data',
+                    'Supervised learning is faster than unsupervised learning',
+                    'Supervised learning is only used for classification tasks'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'Supervised learning uses labeled training data where the desired output is known, while unsupervised learning works with unlabeled data to find patterns and structures.'
+                },
+                {
+                  id: 'q1_2',
+                  text: 'Which of the following is NOT a common application of machine learning?',
+                  options: [
+                    'Image recognition',
+                    'Weather control',
+                    'Spam detection',
+                    'Medical diagnosis'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'Weather control is not possible with current technology. Machine learning can predict weather patterns but cannot control them.'
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: '1-2',
+        courseId: '1',
+        title: 'Data Types in Python',
+        description: 'Explore the KNN algorithm and its use in classification problems.',
+        category: 'classification',
+        difficulty: 'intermediate',
+        completed: false,
+        exercises: [
+          {
+            id: '1-2-1',
+            lessonId: '1-2',
+            title: 'Understanding KNN Algorithm',
+            description: 'Visual explanation of how the K-Nearest Neighbors algorithm works.',
+            type: 'visual',
+            completed: false,
+            content: `
+              <h2>Understanding KNN</h2>
+              <p>K-Nearest Neighbors is a simple but powerful algorithm used for both classification and regression tasks.</p>
+
+              <h2>How KNN Works</h2>
+              <ol>
+                <li>Calculate the distance between the new point and all training points</li>
+                <li>Select the K nearest points</li>
+                <li>For classification: take a majority vote</li>
+                <li>For regression: take the average value</li>
+              </ol>
+
+              <h2>Choosing K</h2>
+              <p>The value of K is crucial:</p>
+              <ul>
+                <li>Small K: More sensitive to noise</li>
+                <li>Large K: Smoother decision boundaries</li>
+                <li>K should be odd for binary classification</li>
+              </ul>
+            `
+          },
+          {
+            id: '1-2-2',
+            lessonId: '1-2',
+            title: 'KNN Decision Boundaries',
+            description: 'Interactive visualization to explore how different k values affect decision boundaries.',
+            type: 'interactive',
+            completed: false
+          },
+          {
+            id: '1-2-3',
+            lessonId: '1-2',
+            title: 'KNN Algorithm Quiz',
+            description: 'Test your understanding of the K-Nearest Neighbors algorithm.',
+            type: 'quiz',
+            completed: false,
+            quiz: {
+              id: 'q3',
+              questions: [
+                {
+                  id: 'q3_1',
+                  text: 'Why should K be an odd number in binary classification?',
+                  options: [
+                    'It makes the algorithm faster',
+                    'To avoid ties in voting',
+                    'It reduces the memory usage',
+                    'It improves accuracy in all cases'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'Using an odd number for K in binary classification helps avoid tie situations in the majority voting process.'
+                },
+                {
+                  id: 'q3_2',
+                  text: 'What happens when K is too small?',
+                  options: [
+                    'The model becomes more robust',
+                    'The model becomes more sensitive to noise',
+                    'The model always underfits',
+                    'The computation becomes slower'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'When K is too small, the model becomes more sensitive to noise in the training data, potentially leading to overfitting.'
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        id: '1-3',
+        courseId: '1',
+        title: 'Common Data Structures in Python',
+        description: 'Learn about the perceptron, the building block of neural networks.',
+        category: 'basics',
+        difficulty: 'intermediate',
+        completed: false,
+        exercises: [
+          {
+            id: '1-3-1',
+            lessonId: '1-3',
+            title: 'Perceptron Fundamentals',
+            description: 'Visual explanation of how perceptrons work and their limitations.',
+            type: 'visual',
+            completed: false
+          },
+          {
+            id: '1-3-2',
+            lessonId: '1-3',
+            title: 'Training a Perceptron',
+            description: 'Interactive exercise to train a perceptron on different datasets.',
+            type: 'interactive',
+            completed: false
+          },
+          {
+            id: '1-3-3',
+            lessonId: '1-3',
+            title: 'Perceptron Quiz',
+            description: 'Test your knowledge of perceptrons and their capabilities.',
+            type: 'quiz',
+            completed: false,
+            quiz: {
+              id: 'q4',
+              questions: [
+                {
+                  id: 'q4_1',
+                  text: 'What is the main limitation of a single-layer perceptron?',
+                  options: [
+                    'It can only handle binary classification',
+                    'It cannot learn non-linear relationships',
+                    'It requires too much memory',
+                    'It is too slow for practical use'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'A single-layer perceptron cannot learn non-linear relationships, which is known as the XOR problem. This limitation led to the development of multi-layer neural networks.'
+                },
+                {
+                  id: 'q4_2',
+                  text: 'Which of the following is true about the perceptron learning rule?',
+                  options: [
+                    'It uses gradient descent',
+                    'It only works for regression problems',
+                    'It adjusts weights based on prediction errors',
+                    'It requires a large dataset to converge'
+                  ],
+                  correctAnswer: 2,
+                  explanation: 'The perceptron learning rule adjusts the weights based on the error between the predicted output and the actual output, moving the decision boundary to correctly classify misclassified points.'
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
     id: '1',
     title: 'Introduction to Machine Learning',
     description: 'Learn the fundamental concepts of machine learning and its applications.',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80',
+    image: 'https://images.pexels.com/photos/17483910/pexels-photo-17483910/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-represents-the-concept-of-artificial-general-intelligence-agi-it-was-created-by-artist-domhnall-malone-as-part-of-th.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     difficulty: 'beginner',
     completed: false,
     lessons: [
@@ -253,7 +496,7 @@ const sampleCourses: Course[] = [
     id: '2',
     title: 'Deep Learning Fundamentals',
     description: 'Dive into neural networks, backpropagation, and modern deep learning architectures.',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80',
+    image: 'https://images.pexels.com/photos/18069362/pexels-photo-18069362/free-photo-of-an-artist-s-illustration-of-artificial-intelligence-ai-this-image-depicts-how-ai-could-help-understand-ecosystems-and-identify-species-it-was-created-by-nidia-dias-as-part-of-the-visua.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
     difficulty: 'intermediate',
     completed: false,
     lessons: [
@@ -285,6 +528,154 @@ const sampleCourses: Course[] = [
           {
             id: '2-1-3',
             lessonId: '2-1',
+            title: 'Neural Networks Quiz',
+            description: 'Test your knowledge of neural network fundamentals.',
+            type: 'quiz',
+            completed: false,
+            quiz: {
+              id: 'q5',
+              questions: [
+                {
+                  id: 'q5_1',
+                  text: 'What is an activation function in a neural network?',
+                  options: [
+                    'A function that initializes the weights',
+                    'A function that determines if a neuron fires',
+                    'A function that calculates the loss',
+                    'A function that optimizes the learning rate'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'An activation function determines the output of a neuron based on its inputs. It introduces non-linearity into the network, allowing it to learn complex patterns.'
+                },
+                {
+                  id: 'q5_2',
+                  text: 'Which of the following is NOT a common activation function?',
+                  options: [
+                    'ReLU (Rectified Linear Unit)',
+                    'Sigmoid',
+                    'Tanh',
+                    'Logarithmic Mean Square'
+                  ],
+                  correctAnswer: 3,
+                  explanation: 'Logarithmic Mean Square is not a standard activation function. Common activation functions include ReLU, Sigmoid, Tanh, and Leaky ReLU.'
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: '3',
+    title: 'Build Neural Networks From Scratch',
+    description: 'Dive into neural networks, backpropagation, and modern deep learning architectures.',
+    image: 'https://images.pexels.com/photos/30885762/pexels-photo-30885762/free-photo-of-wooden-tiles-spelling-deepseek-on-table.jpeg',
+    difficulty: 'advanced',
+    completed: false,
+    lessons: [
+      {
+        id: '2-1',
+        courseId: '2',
+        title: 'Neural Networks Basics',
+        description: 'Learn the fundamental concepts of neural networks and their architecture.',
+        category: 'basics',
+        difficulty: 'intermediate',
+        completed: false,
+        exercises: [
+          {
+            id: '2-1-1',
+            lessonId: '2-1',
+            title: 'Neural Network Architecture',
+            description: 'Visual explanation of neural network layers, neurons, and connections.',
+            type: 'visual',
+            completed: false
+          },
+          {
+            id: '2-1-2',
+            lessonId: '2-1',
+            title: 'Building a Simple Neural Network',
+            description: 'Interactive exercise to build and train a simple neural network.',
+            type: 'interactive',
+            completed: false
+          },
+          {
+            id: '2-1-3',
+            lessonId: '2-1',
+            title: 'Neural Networks Quiz',
+            description: 'Test your knowledge of neural network fundamentals.',
+            type: 'quiz',
+            completed: false,
+            quiz: {
+              id: 'q5',
+              questions: [
+                {
+                  id: 'q5_1',
+                  text: 'What is an activation function in a neural network?',
+                  options: [
+                    'A function that initializes the weights',
+                    'A function that determines if a neuron fires',
+                    'A function that calculates the loss',
+                    'A function that optimizes the learning rate'
+                  ],
+                  correctAnswer: 1,
+                  explanation: 'An activation function determines the output of a neuron based on its inputs. It introduces non-linearity into the network, allowing it to learn complex patterns.'
+                },
+                {
+                  id: 'q5_2',
+                  text: 'Which of the following is NOT a common activation function?',
+                  options: [
+                    'ReLU (Rectified Linear Unit)',
+                    'Sigmoid',
+                    'Tanh',
+                    'Logarithmic Mean Square'
+                  ],
+                  correctAnswer: 3,
+                  explanation: 'Logarithmic Mean Square is not a standard activation function. Common activation functions include ReLU, Sigmoid, Tanh, and Leaky ReLU.'
+                }
+              ]
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    id: '4',
+    title: 'ML Research Papers',
+    description: 'Dive into neural networks, backpropagation, and modern deep learning architectures.',
+    image: 'https://images.pexels.com/photos/12334692/pexels-photo-12334692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2',
+    difficulty: 'advanced',
+    completed: false,
+    lessons: [
+      {
+        id: '4-1',
+        courseId: '2',
+        title: 'Attention Is All You Need',
+        description: 'Fundamental paper that changed the way we see how LLMs work',
+        category: 'basics',
+        difficulty: 'advanced',
+        completed: false,
+        exercises: [
+          {
+            id: '4-1-1',
+            lessonId: '4-1',
+            title: 'Neural Network Architecture',
+            description: 'Visual explanation of neural network layers, neurons, and connections.',
+            type: 'visual',
+            completed: false
+          },
+          {
+            id: '4-1-2',
+            lessonId: '4-1',
+            title: 'Building a Simple Neural Network',
+            description: 'Interactive exercise to build and train a simple neural network.',
+            type: 'interactive',
+            completed: false
+          },
+          {
+            id: '4-1-3',
+            lessonId: '4-1',
             title: 'Neural Networks Quiz',
             description: 'Test your knowledge of neural network fundamentals.',
             type: 'quiz',
