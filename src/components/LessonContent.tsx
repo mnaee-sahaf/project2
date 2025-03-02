@@ -43,7 +43,7 @@ export function LessonContent({ lesson, onBack }: LessonContentProps) {
   const allExercisesCompleted = lesson.exercises.every(ex => completedExercises.has(ex.id));
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto px-4">
       <button
         onClick={onBack}
         className="mb-6 flex items-center gap-2 text-indigo-600 hover:text-indigo-700 transition-colors"

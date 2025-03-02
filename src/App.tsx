@@ -14,25 +14,24 @@ import { useAuth } from './contexts/AuthContext';
 import { Resources } from './pages/Resources';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
+import LiveClass from './pages/LiveClass';
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   
   return (
-    <div className="flex flex-1 flex-col">
+    <div className="flex flex-1 flex-col min-h-screen">
     <Header/>
-    <div className="min-h-screen bg-gray-50 flex">
+    <div className="flex flex-1 flex-col md:flex-row">
       <Navigation />
-      <main className="flex-1 p-6 md:p-8 pb-24 md:pb-8">
+      <main className="flex-1 p-6 md:p-8 pb-24 md:pb-8 overflow-x-hidden">
         <div className="max-w-7xl mx-auto">
           {children}
         </div>
       </main>
-      {!user && <AuthPrompt />}
       </div>
-      <footer  className="sticky top-[100vh] flex">
+      {!user && <AuthPrompt />}
       <Footer />
-      </footer>
     </div>
   );
 }
@@ -49,6 +48,7 @@ function App() {
         <Route path="/dashboard" element={<AppLayout><Dashboard /></AppLayout>} />
         <Route path="/lessons" element={<AppLayout><Lessons /></AppLayout>} />
         <Route path="/practice" element={<AppLayout><Practice /></AppLayout>} />
+        <Route path="/liveClass" element={<AppLayout><LiveClass /></AppLayout>} />
         <Route path="/resources" element={<AppLayout><Resources/></AppLayout>} />
       </Routes>
     </AuthProvider>

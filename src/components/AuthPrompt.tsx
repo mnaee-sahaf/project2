@@ -10,7 +10,7 @@ export function AuthPrompt() {
   }
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg p-4 md:p-6">
+    <div className="fixed bottom-0 left-0 right-0 bg-white border-t shadow-lg p-4 md:p-6 z-50">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex-1">
           <h3 className="text-lg font-semibold text-gray-900">Want to save your progress?</h3>

@@ -29,6 +29,7 @@ export interface Exercise {
   completed: boolean;
   content?: string;
   quiz?: Quiz;
+  path?: string; 
 }
 
 export interface Quiz {

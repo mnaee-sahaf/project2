@@ -19,22 +19,52 @@ export function Resources() {
 
 
       <div className="grid md:grid-cols-2 gap-6 mb-8">
-        {/* <section>
-          <h2 className="text-xl font-semibold mb-4">Your Current Lesson</h2>
-          <p>Cuurent Lesson Will Be Put Here</p>        </section> */}
-
-        {/* <section>
-          <h2 className="text-xl font-semibold mb-4">Next Up</h2>
-          <div className="space-y-4">
-            {allLessons.map(lesson => (
-              <LessonCard
-                key={lesson.id}
-                lesson={lesson}
-                onClick={() => console.log('Lesson clicked:', lesson.id)}
-              />
-            ))}
+        <div className="p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
+          <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <DownloadCloud className="h-6 w-6 text-indigo-600" />
           </div>
-        </section> */}
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            Downloadable Worksheets
+          </h3>
+          <p className="text-gray-600">
+            Download and print worksheets to practice your skills.
+            (Coming Soon)
+          </p>
+        </div>
+        <div className="p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
+          <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <DownloadCloud className="h-6 w-6 text-indigo-600" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            Handwritten Notes
+          </h3>
+          <p className="text-gray-600">
+            Download and print notes to help you study.
+            (Coming Soon)
+          </p>
+        </div>
+        <div className="p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
+          <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
+            <DownloadCloud className="h-6 w-6 text-indigo-600" />
+          </div>
+          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            Best Free ML Courses
+          </h3>
+          <p className="text-gray-600">
+            <ul className="text-gray-600 list-disc list-inside">
+              <li><a href="https://karpathy.ai/zero-to-hero.html" target="_blank" rel="noopener noreferrer">Andrej Karpathy: 0 to hero</a></li>
+              <li><a href="https://www.youtube.com/playlist?list=PLkt2uSq6rBVctENoVBg1TpCC7OQi31AlC" target="_blank" rel="noopener noreferrer">CS231n Winter 2016</a></li>
+              <li><a href="https://course.fast.ai/" target="_blank" rel="noopener noreferrer">https://course.fast.ai/</a></li>
+              <li><a href="https://d2l.ai/" target="_blank" rel="noopener noreferrer">https://d2l.ai/</a></li>
+              <li><a href="https://uvadlc-notebooks.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">https://uvadlc-notebooks.readthedocs.io/en/latest/</a></li>
+              <li><a href="https://github.com/mlabonne/llm-course" target="_blank" rel="noopener noreferrer">https://github.com/mlabonne/llm-course</a></li>
+              <li><a href="https://huggingface.co/learn/computer-vision-course/en/unit0/welcome/welcome" target="_blank" rel="noopener noreferrer">Huggingface Computer Vision</a></li>
+              <li><a href="https://huggingface.co/learn/diffusion-course/unit0/1" target="_blank" rel="noopener noreferrer">Huggingface Diffusion</a></li>
+              <li><a href="https://www.cs.cornell.edu/courses/cs4780/2024sp/" target="_blank" rel="noopener noreferrer">Cornerll CS4780</a></li>
+              <li><a href="https://github.com/abhishekkrthakur/approachingalmost" target="_blank" rel="noopener noreferrer">Approaching Almost Any ML Problem</a></li>
+            </ul>
+          </p>
+        </div>
       </div>
     </>
   );

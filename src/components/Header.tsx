@@ -1,7 +1,7 @@
 export function Header() {
 
 
-    const nextCohortDate = "March 15, 2025";
+    const nextCohortDate = "May 15, 2025";
 
     return (
 

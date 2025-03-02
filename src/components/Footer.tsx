@@ -1,8 +1,8 @@
 export function Footer() {
     return (
-      <footer className="w-full bg-white px-8 py-8">
+      <footer className="w-full bg-white border border-gray-200">
         {/* Main Footer Content */}
-        <div className="w-full max-w-7xl mx-auto pt-8">
+        <div className="w-full max-w-7xl mx-auto pt-2">
           <div className="flex flex-col md:flex-row justify-between gap-8">
             
             {/* Interactive ML Section */}
@@ -38,7 +38,7 @@ export function Footer() {
             {/* Connect With Us Section */}
             <div className="flex-1">
               <h1 className="text-lg font-bold mb-4">Connect With Us</h1>
-              <ul className="space-y-2">
+              <ul className="space-y-1">
                 <li>
                   <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#4F47E5] transition-colors">
                     LinkedIn
@@ -65,8 +65,8 @@ export function Footer() {
         </div>
   
         {/* Copyright Section */}
-        <div className="mt-8 border-t border-gray-300 pt-6 text-center">
-          <p className="text-[#4F47E5] pb-6">© 2025 Interactive-ML - Muneeb Sahaf - All rights reserved</p>
+        <div className="w-full text-center py-2 bg-gray-800 text-white mt-4">
+          <p>© 2025 Interactive-ML - Muneeb Sahaf - All rights reserved</p>
         </div>
       </footer>
     );

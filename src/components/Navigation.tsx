@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Home, BookOpen, Activity, LogOut, LogIn, DownloadCloud, ChevronRight, ChevronLeft } from 'lucide-react';
+import { Home, BookOpen, Activity, LogOut, LogIn, DownloadCloud, ChevronRight, ChevronLeft, Computer } from 'lucide-react';
 import { NavLink, Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -8,14 +8,20 @@ export function Navigation() {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
-    <nav className={`fixed bottom-0 left-0 bg-white border-t md:relative md:border-t-0 md:border-r transition-all duration-300
+    <nav className={`fixed bottom-0 z-10 md:sticky top-0 left-0 bg-white border-t border border-gray-200 md:border-t-0 md:border-r transition-all duration-300
       ${isCollapsed ? 'md:w-16' : 'md:w-64'} md:h-screen`}>
       
        <div className="flex justify-around items-center p-4 md:flex-col md:items-start md:space-y-6">
         {/* Logo */}
         <div  className="flex items-center justify-between w-full mb-8">
           <Link to="/"     className={`text-2xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors 
-            ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}>
+            ${isCollapsed ? 'opacity-0 w-0' : 'opacity-100'}`}
+            onClick={(e) => {
+            if (isCollapsed) {
+              e.preventDefault();
+            }
+          }}
+            >
             ML Academy
           </Link>
           <div>
@@ -35,6 +41,7 @@ export function Navigation() {
         <NavItem to="/dashboard" icon={<Home size={20} />} label="Dashboard" collapsed={isCollapsed} />
         <NavItem to="/lessons" icon={<BookOpen size={20} />} label="Lessons" collapsed={isCollapsed} />
         <NavItem to="/practice" icon={<Activity size={20} />} label="Practice" collapsed={isCollapsed} />
+        <NavItem to="/liveClass" icon={<Computer size={20} />} label="Live Class" collapsed={isCollapsed} />
         <NavItem to="/resources" icon={<DownloadCloud size={20} />} label="Resources" collapsed={isCollapsed} />
         
         {/* Sign In/Sign Out */}

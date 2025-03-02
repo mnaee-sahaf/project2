@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Dumbbell, Search, ArrowLeft } from 'lucide-react';
 import { supabase } from '../lib/supabase';
 import type { Course, Lesson, Exercise } from '../types';
+import { BookOpen, Activity, HelpCircle, ArrowRight } from 'lucide-react';
 import { ExerciseContent } from '../components/exercises/ExerciseContent';
 
 // Sample courses data - in a real app, this would come from an API or database
@@ -312,4 +313,3 @@ function ExerciseCard({ exercise, onClick }: ExerciseCardProps) {
   );
 }
 
-import { BookOpen, Activity, HelpCircle, ArrowRight } from 'lucide-react';
