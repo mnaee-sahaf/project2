@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Dumbbell, Search, ArrowLeft } from 'lucide-react';
-import { supabase } from '../lib/supabase';
-import type { Course, Lesson, Exercise } from '../types';
+// import { supabase } from '../lib/supabase';
+import type { Course, Exercise } from '../types';
 import { BookOpen, Activity, HelpCircle, ArrowRight } from 'lucide-react';
 import { ExerciseContent } from '../components/exercises/ExerciseContent';
 
