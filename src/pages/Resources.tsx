@@ -8,7 +8,7 @@ export function Resources() {
     <>
       <header className="mb-6 sm:mb-8">
         <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
-          <DownloadCloud className="text-indigo-600" size={24} sm={32} />
+          <DownloadCloud className="text-indigo-600" size={24}/>
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Resources</h1>
         </div>
         <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">

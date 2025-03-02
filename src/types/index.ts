@@ -6,6 +6,7 @@ export interface Course {
   difficulty: 'beginner' | 'intermediate' | 'advanced';
   lessons: Lesson[];
   completed: boolean;
+  paid: boolean;
 }
 
 export interface Lesson {

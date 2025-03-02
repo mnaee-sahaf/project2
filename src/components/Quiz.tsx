@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import type { Quiz as QuizType, Question } from '../types';
+import { useState } from 'react';
+import type { Quiz as QuizType} from '../types';
 import { CheckCircle, XCircle } from 'lucide-react';
 
 interface QuizProps {

@@ -15,7 +15,7 @@ export function Footer() {
   
             {/* Quick Links Section */}
             <nav className="flex-1">
-              <h1 className="text-lg font-bold mb-4">Quick Links</h1>
+              <h1 className="text-lg font-bold mb-4">Interactive CS</h1>
               <ul className="space-y-2 text-sm md:text-base">
                 <li>
                   <a href="/about" className="text-gray-700 hover:text-[#4F47E5] transition-colors">

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 import { LessonCard } from './LessonCard';
 import { LessonContent } from './LessonContent';

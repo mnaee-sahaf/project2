@@ -43,7 +43,7 @@ export function Landing() {
               Through Practice
             </h1>
             <p className="text-lg sm:text-xl md:text-2xl text-indigo-100 mb-6 md:mb-8 max-w-3xl mx-auto">
-              Learn ML concepts hands-on with interactive exercises and real-time visualizations.
+              The latest Research Papers in AI and ML concepts as hands-on interactive exercises and real-time visualizations.
               Start your journey into artificial intelligence today.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -73,7 +73,7 @@ export function Landing() {
               Why Learn With Us?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Our platform combines theory with practice, making complex ML concepts accessible and engaging.
+              Our platform combines theory with practice, making complex ML papers and concepts accessible and engaging.
             </p>
           </div>
           

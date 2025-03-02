@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Sliders, Play, RotateCcw } from 'lucide-react';
 
 interface Parameter {

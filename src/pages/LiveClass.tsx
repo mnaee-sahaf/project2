@@ -7,7 +7,7 @@ const LiveClass: React.FC = () => {
 
       <section className="text-center py-20 bg-gradient-to-br from-indigo-600 to-indigo-900 text-white">
         <h1 className="text-4xl font-bold">Live Cohort - Project: Neural Networks From Scratch</h1>
-        <p className="mt-4 text-lg">No BS Just Pure Code And Math</p>
+        <p className="mt-4 text-lg">No fluff - just pure code and math</p>
         <div className="mt-6 space-x-4">
           <button className="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold shadow-md">ENROLL</button>
         </div>
@@ -51,7 +51,7 @@ const LiveClass: React.FC = () => {
       {/* Instructor Section */}
       <section className="text-center py-16 px-4">
         <div className="max-w-2xl mx-auto bg-white rounded-xl shadow-lg p-8">
-          <img src="/profile.jpg" alt="Instructor" className="w-24 h-24 mx-auto rounded-full border-4 border-gray-300" />
+          <img src="https://media.licdn.com/dms/image/v2/C4E03AQHoObM8JxPL8Q/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1550355697703?e=1746662400&v=beta&t=bLE0wBxhQfWVjd-u65tk2fKCxZmXl044dfbfRrqfOXk" alt="Instructor" className="w-24 h-24 mx-auto rounded-full border-4 border-gray-300" />
           <h2 className="text-2xl font-bold mt-4">Yo! I'm Muneeb</h2>
           <p className="text-gray-600 mt-2">I have 4 years of experience in software engineering.</p>
           <p className="text-gray-600 mt-4">I’ve worked with companies like Motive and Jibble to build enterprise systems, I created this platform to teach myself and others the basics of Machine Learning

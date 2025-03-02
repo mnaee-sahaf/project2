@@ -1,4 +1,3 @@
-import React from 'react';
 import { ArrowLeft, CheckCircle } from 'lucide-react';
 import type { Exercise } from '../../types';
 import { VisualExercise } from './VisualExercise';

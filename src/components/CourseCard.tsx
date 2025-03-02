@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Course } from '../types';
 import { ArrowRight, CheckCircle, BookOpen } from 'lucide-react';
 

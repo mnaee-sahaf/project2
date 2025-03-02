@@ -1,3 +1,5 @@
+
+
 export function InstructorCard(){
   return (
     <div className="bg-gray-100 rounded-2xl p-4 sm:p-6 md:p-8 max-w-xl mx-auto shadow-lg flex flex-col items-center">
