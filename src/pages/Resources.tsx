@@ -6,39 +6,37 @@ import { DownloadCloud } from "lucide-react";
 export function Resources() {
   return (
     <>
-      <header className="mb-8">
-        <div className="flex items-center gap-3 mb-4">
-        <DownloadCloud className="text-indigo-600" size={32} />
-        <h1 className="text-3xl font-bold text-gray-900">Resources</h1>
+      <header className="mb-6 sm:mb-8">
+        <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+          <DownloadCloud className="text-indigo-600" size={24} sm={32} />
+          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">Resources</h1>
         </div>
-        <p className="text-gray-600 mt-2">
-        Here you can find downloadable worksheets and handwrtitten notes
+        <p className="text-sm sm:text-base text-gray-600 mt-1 sm:mt-2">
+          Here you can find downloadable worksheets and handwritten notes
         </p>
-     
       </header>
 
-
-      <div className="grid md:grid-cols-2 gap-6 mb-8">
-        <div className="p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
-          <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-            <DownloadCloud className="h-6 w-6 text-indigo-600" />
+      <div className="grid sm:grid-cols-2 gap-4 sm:gap-6 mb-6 sm:mb-8">
+        <div className="p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
+          <div className="w-10 sm:w-12 h-10 sm:h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+            <DownloadCloud className="h-5 sm:h-6 w-5 sm:w-6 text-indigo-600" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
             Downloadable Worksheets
           </h3>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Download and print worksheets to practice your skills.
             (Coming Soon)
           </p>
         </div>
-        <div className="p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
-          <div className="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-4">
-            <DownloadCloud className="h-6 w-6 text-indigo-600" />
+        <div className="p-4 sm:p-6 rounded-xl border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition-all">
+          <div className="w-10 sm:w-12 h-10 sm:h-12 bg-indigo-100 rounded-lg flex items-center justify-center mb-3 sm:mb-4">
+            <DownloadCloud className="h-5 sm:h-6 w-5 sm:w-6 text-indigo-600" />
           </div>
-          <h3 className="text-xl font-semibold text-gray-900 mb-2">
+          <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-1 sm:mb-2">
             Handwritten Notes
           </h3>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Download and print notes to help you study.
             (Coming Soon)
           </p>
