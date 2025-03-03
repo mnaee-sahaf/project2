@@ -3,7 +3,7 @@ import { Search,GraduationCap } from 'lucide-react';
 import { CourseCard } from '../components/CourseCard';
 import { CourseContent } from '../components/CourseContent';
 import type { Course } from '../types';
-import { sampleCourses } from '../data/courseData';
+import { Courses } from '../data/courseData';
 
 // import course data
 export function Lessons() {
@@ -11,7 +11,7 @@ export function Lessons() {
   const [selectedDifficulty, setSelectedDifficulty] = useState<string | null>(null);
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
-  const filteredCourses = sampleCourses.filter(course => {
+  const filteredCourses = Courses.filter(course => {
     const matchesSearch = course.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          course.description.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesDifficulty = !selectedDifficulty || course.difficulty === selectedDifficulty;

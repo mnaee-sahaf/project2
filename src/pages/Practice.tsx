@@ -1,114 +1,115 @@
 import { useState, useEffect } from 'react';
 import { Dumbbell, Search, ArrowLeft } from 'lucide-react';
 // import { supabase } from '../lib/supabase';
-import type { Course, Exercise } from '../types';
+import type { Exercise } from '../types';
 import { BookOpen, Activity, HelpCircle, ArrowRight } from 'lucide-react';
 import { ExerciseContent } from '../components/exercises/ExerciseContent';
+import { Courses } from '../data/courseData';
 
 // Sample courses data - in a real app, this would come from an API or database
-const sampleCourses: Course[] = [
-  {
-    id: '1',
-    title: 'Introduction to Machine Learning',
-    description: 'Learn the fundamental concepts of machine learning and its applications.',
-    image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80',
-    difficulty: 'beginner',
-    completed: false,
-    lessons: [
-      {
-        id: '1-1',
-        courseId: '1',
-        title: 'ML Basics',
-        description: 'Learn the fundamental concepts of machine learning and its applications.',
-        category: 'basics',
-        difficulty: 'beginner',
-        completed: true,
-        exercises: [
-          {
-            id: '1-1-1',
-            lessonId: '1-1',
-            title: 'Understanding Machine Learning Concepts',
-            description: 'Visual explanation of key machine learning concepts and terminology.',
-            type: 'visual',
-            completed: false,
-            content: `
-              <h2>What is Machine Learning?</h2>
-              <p>Machine Learning is a subset of artificial intelligence that focuses on developing systems that can learn and improve from experience without being explicitly programmed.</p>
+// const sampleCourses: Course[] = [
+//   {
+//     id: '1',
+//     title: 'Introduction to Machine Learning',
+//     description: 'Learn the fundamental concepts of machine learning and its applications.',
+//     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1365&q=80',
+//     difficulty: 'beginner',
+//     completed: false,
+//     lessons: [
+//       {
+//         id: '1-1',
+//         courseId: '1',
+//         title: 'ML Basics',
+//         description: 'Learn the fundamental concepts of machine learning and its applications.',
+//         category: 'basics',
+//         difficulty: 'beginner',
+//         completed: true,
+//         exercises: [
+//           {
+//             id: '1-1-1',
+//             lessonId: '1-1',
+//             title: 'Understanding Machine Learning Concepts',
+//             description: 'Visual explanation of key machine learning concepts and terminology.',
+//             type: 'visual',
+//             completed: false,
+//             content: `
+//               <h2>What is Machine Learning?</h2>
+//               <p>Machine Learning is a subset of artificial intelligence that focuses on developing systems that can learn and improve from experience without being explicitly programmed.</p>
               
-              <h2>Key Concepts</h2>
-              <ul>
-                <li><strong>Supervised Learning:</strong> The algorithm learns from labeled training data</li>
-                <li><strong>Unsupervised Learning:</strong> The algorithm finds patterns in unlabeled data</li>
-                <li><strong>Reinforcement Learning:</strong> The algorithm learns through trial and error</li>
-              </ul>
+//               <h2>Key Concepts</h2>
+//               <ul>
+//                 <li><strong>Supervised Learning:</strong> The algorithm learns from labeled training data</li>
+//                 <li><strong>Unsupervised Learning:</strong> The algorithm finds patterns in unlabeled data</li>
+//                 <li><strong>Reinforcement Learning:</strong> The algorithm learns through trial and error</li>
+//               </ul>
 
-              <h2>Applications</h2>
-              <p>Machine learning is used in various fields:</p>
-              <ul>
-                <li>Image and Speech Recognition</li>
-                <li>Natural Language Processing</li>
-                <li>Recommendation Systems</li>
-                <li>Autonomous Vehicles</li>
-                <li>Medical Diagnosis</li>
-              </ul>
-            `
-          },
-          {
-            id: '1-1-2',
-            lessonId: '1-1',
-            title: 'Exploring Data Patterns',
-            description: 'Interactive visualization to explore how machine learning identifies patterns in data.',
-            type: 'interactive',
-            completed: false
-          },
-          {
-            id: '1-1-3',
-            lessonId: '1-1',
-            title: 'ML Fundamentals Quiz',
-            description: 'Test your knowledge of basic machine learning concepts and terminology.',
-            type: 'quiz',
-            completed: false,
-            quiz: {
-              id: 'q1',
-              questions: [
-                {
-                  id: 'q1_1',
-                  text: 'What is the main difference between supervised and unsupervised learning?',
-                  options: [
-                    'Supervised learning requires a GPU, unsupervised doesn\'t',
-                    'Supervised learning uses labeled data, unsupervised learning uses unlabeled data',
-                    'Supervised learning is faster than unsupervised learning',
-                    'Supervised learning is only used for classification tasks'
-                  ],
-                  correctAnswer: 1,
-                  explanation: 'Supervised learning uses labeled training data where the desired output is known, while unsupervised learning works with unlabeled data to find patterns and structures.'
-                },
-                {
-                  id: 'q1_2',
-                  text: 'Which of the following is NOT a common application of machine learning?',
-                  options: [
-                    'Image recognition',
-                    'Weather control',
-                    'Spam detection',
-                    'Medical diagnosis'
-                  ],
-                  correctAnswer: 1,
-                  explanation: 'Weather control is not possible with current technology. Machine learning can predict weather patterns but cannot control them.'
-                }
-              ]
-            }
-          }
-        ]
-      }
-    ]
-  }
-];
+//               <h2>Applications</h2>
+//               <p>Machine learning is used in various fields:</p>
+//               <ul>
+//                 <li>Image and Speech Recognition</li>
+//                 <li>Natural Language Processing</li>
+//                 <li>Recommendation Systems</li>
+//                 <li>Autonomous Vehicles</li>
+//                 <li>Medical Diagnosis</li>
+//               </ul>
+//             `
+//           },
+//           {
+//             id: '1-1-2',
+//             lessonId: '1-1',
+//             title: 'Exploring Data Patterns',
+//             description: 'Interactive visualization to explore how machine learning identifies patterns in data.',
+//             type: 'interactive',
+//             completed: false
+//           },
+//           {
+//             id: '1-1-3',
+//             lessonId: '1-1',
+//             title: 'ML Fundamentals Quiz',
+//             description: 'Test your knowledge of basic machine learning concepts and terminology.',
+//             type: 'quiz',
+//             completed: false,
+//             quiz: {
+//               id: 'q1',
+//               questions: [
+//                 {
+//                   id: 'q1_1',
+//                   text: 'What is the main difference between supervised and unsupervised learning?',
+//                   options: [
+//                     'Supervised learning requires a GPU, unsupervised doesn\'t',
+//                     'Supervised learning uses labeled data, unsupervised learning uses unlabeled data',
+//                     'Supervised learning is faster than unsupervised learning',
+//                     'Supervised learning is only used for classification tasks'
+//                   ],
+//                   correctAnswer: 1,
+//                   explanation: 'Supervised learning uses labeled training data where the desired output is known, while unsupervised learning works with unlabeled data to find patterns and structures.'
+//                 },
+//                 {
+//                   id: 'q1_2',
+//                   text: 'Which of the following is NOT a common application of machine learning?',
+//                   options: [
+//                     'Image recognition',
+//                     'Weather control',
+//                     'Spam detection',
+//                     'Medical diagnosis'
+//                   ],
+//                   correctAnswer: 1,
+//                   explanation: 'Weather control is not possible with current technology. Machine learning can predict weather patterns but cannot control them.'
+//                 }
+//               ]
+//             }
+//           }
+//         ]
+//       }
+//     ]
+//   }
+// ];
 
 // Flatten all exercises from all courses and lessons
 const getAllExercises = (): Exercise[] => {
   const allExercises: Exercise[] = [];
   
-  sampleCourses.forEach(course => {
+  Courses.forEach(course => {
     course.lessons.forEach(lesson => {
       lesson.exercises.forEach(exercise => {
         allExercises.push({
@@ -149,7 +150,7 @@ export function Practice() {
   const filteredExercises = exercises.filter(exercise => {
     const matchesSearch = exercise.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
                          exercise.description.toLowerCase().includes(searchQuery.toLowerCase());
-    const matchesType = !selectedType || exercise.type === selectedType;
+    const matchesType = !selectedType || exercise.type.toLowerCase() === selectedType.toLowerCase();
     return matchesSearch && matchesType;
   });
 

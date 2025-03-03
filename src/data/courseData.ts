@@ -1,7 +1,6 @@
 import type { Course } from '../types';
 
-
-export const sampleCourses: Course[] = [
+export const Courses: Course[] = [
     {
         id: '4',
         title: 'ML Research Papers',

@@ -3,6 +3,8 @@ import { ArrowLeft, BookOpen } from 'lucide-react';
 import { LessonCard } from './LessonCard';
 import { LessonContent } from './LessonContent';
 import type { Course, Lesson } from '../types';
+import { PurchaseCourseButton } from './PurchaseCourseButton';
+
 
 interface CourseContentProps {
   course: Course;
@@ -47,6 +49,16 @@ export function CourseContent({ course, onBack }: CourseContentProps) {
         </div>
         <p className="text-gray-600">{course.description}</p>
       </div>
+
+      {course.paid && (
+        <div className="mb-6">
+          <PurchaseCourseButton 
+            courseId={course.id}
+            courseTitle={course.title}
+            price={5.99}
+          />
+        </div>
+      )}
 
       <h2 className="text-xl font-semibold mb-4">Course Lessons</h2>
       <div className="space-y-4">

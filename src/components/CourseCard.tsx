@@ -57,10 +57,13 @@ export function CourseCard({ course, onClick }: CourseCardProps) {
         <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm
           ${course.difficulty === 'beginner' ? 'bg-green-100 text-green-800' :
             course.difficulty === 'intermediate' ? 'bg-yellow-100 text-yellow-800' :
-            'bg-red-100 text-red-800'}`}>
+            'bg-orange-100 text-orange-800'}`}>
           {course.difficulty}
         </span>
-        
+        <span className={`px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-xs sm:text-sm
+          ${course.paid ? 'bg-blue-100 text-blue-800' : 'bg-purple-100 text-purple-800'}`}>
+          {course.paid ? 'paid' : 'free'}
+        </span>
         <button className="text-indigo-600 hover:text-indigo-700 flex items-center gap-1 text-xs sm:text-sm">
           View
           <ArrowRight size={14} />

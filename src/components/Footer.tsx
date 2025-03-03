@@ -41,7 +41,7 @@ export function Footer() {
               <h1 className="text-lg font-bold mb-4">Connect With Us</h1>
               <ul className="space-y-1 text-sm md:text-base">
                 <li>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#4F47E5] transition-colors">
+                  <a href="https://linkedin.com/in/muneeb-sahaf/" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-[#4F47E5] transition-colors">
                     LinkedIn
                   </a>
                 </li>

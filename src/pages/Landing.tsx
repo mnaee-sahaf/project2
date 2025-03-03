@@ -73,8 +73,12 @@ export function Landing() {
               Why Learn With Us?
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              Our platform combines theory with practice, making complex ML papers and concepts accessible and engaging.
+              Our Goal is to make AI education accessible to everyone. Our platform lowers the barrier for entry by combining theory with practice, making complex ML papers and concepts accessible and engaging
             </p>
+            <br />
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+               The problem to solve here is that with the rise of AI tools, mastering the basic funadamentals is more important than ever. It's what will differenitate between those that are replaceable and those that are not
+               </p>
           </div>
           
           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">

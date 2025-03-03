@@ -35,3 +35,13 @@ CREATE TABLE excercises (
  created_at TIMESTAMP DEFAULT NOW(),
 
 );
+
+CREATE TABLE course_purchases (
+  id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+  user_id UUID REFERENCES auth.users(id),
+  course_id UUID REFERENCES courses(id),
+  stripe_session_id TEXT,
+  amount DECIMAL(10,2),
+  status TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
