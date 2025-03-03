@@ -331,6 +331,327 @@ export const sampleCourses: Course[] = [
                 }
               }
             ]
+          },
+          {
+            id: '4-2',
+            courseId: '2',
+            title: 'Neural Networks Are Decision Trees',
+            description: 'Fundamental paper that changed the way we see how LLMs work',
+            category: 'basics',
+            difficulty: 'advanced',
+            completed: false,
+            exercises: [
+              {
+                id: '4-1-1',
+                lessonId: '4-1',
+                title: 'Attention Is All You Need',
+                description: 'A breakdown class on the importance this paper had on the field of NLP',
+                type: 'visual',
+                completed: false
+              },
+              {
+                id: '4-1-2',
+                lessonId: '4-1',
+                title: 'Transformers in Action',
+                description: 'Interactive exercise for Transformers.',
+                type: 'interactive',
+                completed: false,
+                path: 'attention-is-all-you-need'
+              },
+              {
+                id: '4-1-3',
+                lessonId: '4-1',
+                title: 'Paper Quiz',
+                description: 'Test your knowledge of the Attention Is All You Need paper.',
+                type: 'quiz',
+                completed: false,
+                quiz: {
+                  id: 'q5',
+                  questions: [
+                    {
+                      id: 'q1',
+                      text: 'What is the key architectural innovation proposed in the Transformer paper?',
+                      options: [
+                        'Using convolutional neural networks with attention',
+                        'Eliminating recurrence and using only attention mechanisms',
+                        'Combining RNNs with reinforcement learning',
+                        'Introducing new activation functions for sequence modeling'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'The Transformer replaces recurrent and convolutional layers entirely with self-attention mechanisms.'
+                    },
+                    {
+                      id: 'q2',
+                      text: 'What problem does scaled dot-product attention specifically address?',
+                      options: [
+                        'Vanishing gradients in RNNs',
+                        'Large magnitude dot products in high dimensions',
+                        'Overfitting in small datasets', 
+                        'Slow convergence in CNNs'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Scaling by 1/√dₖ prevents large dot product magnitudes that push softmax into low-gradient regions.'
+                    },
+                    {
+                      id: 'q3',
+                      text: 'How many attention heads are used in the base Transformer model?',
+                      options: ['4', '6', '8', '12'],
+                      correctAnswer: 2,
+                      explanation: 'The base model uses h=8 parallel attention heads (Section 3.2.2).'
+                    },
+                    {
+                      id: 'q4', 
+                      text: 'What is the purpose of positional encoding in the Transformer?',
+                      options: [
+                        'To add task-specific metadata',
+                        'To inject sequence order information',
+                        'To reduce model parameters',
+                        'To implement dropout regularization'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Positional encodings compensate for the lack of recurrence/convolutions by encoding position information (Section 3.5).'
+                    },
+                    {
+                      id: 'q5',
+                      text: 'Which component enables the Transformer to handle long-range dependencies better than RNNs?',
+                      options: [
+                        'Residual connections',
+                        'Constant path length between positions', 
+                        'Layer normalization',
+                        'Feed-forward networks'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Self-attention creates direct connections between all positions with O(1) operations (Section 4).'
+                    },
+                    {
+                      id: 'q6',
+                      text: 'What is the dimensionality of the inner feed-forward layer in the position-wise networks?',
+                      options: ['512', '1024', '2048', '4096'],
+                      correctAnswer: 2,
+                      explanation: 'The inner layer has dimensionality d_ff=2048 (Section 3.3).'
+                    },
+                    {
+                      id: 'q7',
+                      text: 'Which regularization technique was NOT used in the Transformer?',
+                      options: [
+                        'Residual dropout',
+                        'Label smoothing', 
+                        'Weight decay',
+                        'Batch normalization'
+                      ],
+                      correctAnswer: 3,
+                      explanation: 'The paper uses dropout and label smoothing but not batch normalization (Section 5.4).'
+                    },
+                    {
+                      id: 'q8',
+                      text: 'What is the primary advantage of multi-head attention over single-head attention?',
+                      options: [
+                        'Reduces computational complexity',
+                        'Allows focusing on different representation subspaces',
+                        'Prevents overfitting',
+                        'Simplifies implementation'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Multi-head attention enables attending to different subspaces simultaneously (Section 3.2.2).'
+                    },
+                    {
+                      id: 'q9',
+                      text: 'How does the decoder prevent leftward information flow?',
+                      options: [
+                        'Using padding masks',
+                        'Applying gradient clipping',
+                        'Masking future positions', 
+                        'Limiting attention heads'
+                      ],
+                      correctAnswer: 2,
+                      explanation: 'The decoder masks subsequent positions to preserve auto-regressive properties (Section 3.2.3).'
+                    },
+                    {
+                      id: 'q10',
+                      text: 'What was the BLEU score improvement over previous best models for English-German translation?',
+                      options: ['1.0', '2.0', '3.0', '4.0'],
+                      correctAnswer: 1,
+                      explanation: 'The Transformer achieved 2.0 BLEU improvement (Section 6.1).'
+                    },
+                    {
+                      id: 'q11',
+                      text: 'Which mathematical function is used for positional encoding?',
+                      options: [
+                        'Sigmoid and tanh',
+                        'Sine and cosine', 
+                        'ReLU and softmax',
+                        'Exponential linear units'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Positional encodings use sine and cosine functions (Section 3.5).'
+                    },
+                    {
+                      id: 'q12',
+                      text: 'What is the purpose of the warmup_steps in the learning rate schedule?',
+                      options: [
+                        'Gradually increase then decrease learning rate',
+                        'Prevent early overfitting',
+                        'Allow model parameters to stabilize', 
+                        'Compensate for Adam optimizer bias'
+                      ],
+                      correctAnswer: 3,
+                      explanation: 'Warmup helps stabilize parameters early in training (Section 5.3).'
+                    },
+                    {
+                      id: 'q13',
+                      text: 'How many layers are in the encoder and decoder stacks of the base model?',
+                      options: ['4', '6', '8', '10'],
+                      correctAnswer: 1,
+                      explanation: 'Both encoder and decoder have N=6 identical layers (Section 3.1).'
+                    },
+                    {
+                      id: 'q14',
+                      text: 'What is the main computational complexity of self-attention layers?',
+                      options: [
+                        'O(n log n)',
+                        'O(n²)', 
+                        'O(n³)',
+                        'O(1)'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Self-attention has O(n²·d) complexity due to pairwise attention (Table 1).'
+                    },
+                    {
+                      id: 'q15',
+                      text: 'Which task demonstrated the Transformers generalization capabilities?',
+                      options: [
+                        'Image classification',
+                        'Speech recognition',
+                        'English constituency parsing', 
+                        'Text summarization'
+                      ],
+                      correctAnswer: 2,
+                      explanation: 'The model achieved strong results on parsing with minimal modifications (Section 6.3).'
+                    },
+                    {
+                      id: 'q16',
+                      text: 'What is the dimensionality ratio between query/key and value vectors in multi-head attention?',
+                      options: [
+                        'd_k = d_v = d_model/h',
+                        'd_k = d_model, d_v = h',
+                        'd_k = h, d_v = d_model',
+                        'All dimensions equal'
+                      ],
+                      correctAnswer: 0,
+                      explanation: 'd_k = d_v = d_model/h = 64 for base model (Section 3.2.2).'
+                    },
+                    {
+                      id: 'q17',
+                      text: 'Which component is responsible for the Transformers parallelization capability?',
+                      options: [
+                        'Layer normalization',
+                        'Position-wise FFNs',
+                        'Self-attention mechanism', 
+                        'Residual connections'
+                      ],
+                      correctAnswer: 2,
+                      explanation: 'Self-attention computes all positions simultaneously (Section 4).'
+                    },
+                    {
+                      id: 'q18',
+                      text: 'What was the primary metric used for translation quality evaluation?',
+                      options: [
+                        'Perplexity',
+                        'BLEU score', 
+                        'ROUGE',
+                        'Accuracy'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Translation results were measured using BLEU (Section 6.1).'
+                    },
+                    {
+                      id: 'q19',
+                      text: 'How does the Transformer handle variable-length sequences?',
+                      options: [
+                        'Dynamic computation graphs',
+                        'Positional encoding',
+                        'Masked attention', 
+                        'All of the above'
+                      ],
+                      correctAnswer: 3,
+                      explanation: 'The model uses all these techniques for sequence handling.'
+                    },
+                    {
+                      id: 'q20',
+                      text: 'What was the purpose of using label smoothing?',
+                      options: [
+                        'Reduce overfitting',
+                        'Improve convergence speed',
+                        'Handle class imbalance',
+                        'All of the above'
+                      ],
+                      correctAnswer: 0,
+                      explanation: 'Label smoothing (ε=0.1) helped prevent overconfidence (Section 5.4).'
+                    },
+                    {
+                      id: 'q21',
+                      text: 'Which architectural choice helps prevent vanishing gradients?',
+                      options: [
+                        'Residual connections', 
+                        'Layer normalization',
+                        'Multi-head attention',
+                        'All of the above'
+                      ],
+                      correctAnswer: 3,
+                      explanation: 'All these components contribute to stable gradient flow.'
+                    },
+                    {
+                      id: 'q22',
+                      text: 'What is the computational advantage of dot-product attention over additive attention?',
+                      options: [
+                        'Better theoretical bounds',
+                        'More parameters',
+                        'Optimized matrix multiplication', 
+                        'Easier to parallelize'
+                      ],
+                      correctAnswer: 2,
+                      explanation: 'Dot-product attention leverages optimized matrix operations (Section 3.2.1).'
+                    },
+                    {
+                      id: 'q23',
+                      text: 'How does the model dimension d_model relate to attention heads?',
+                      options: [
+                        'd_model = h × d_k',
+                        'd_k = d_model × h',
+                        'h = d_model × d_k',
+                        'No direct relationship'
+                      ],
+                      correctAnswer: 0,
+                      explanation: 'd_model = h × d_k (64×8=512 in base model) (Section 3.2.2).'
+                    },
+                    {
+                      id: 'q24',
+                      text: 'What was the key finding from the positional encoding ablation study?',
+                      options: [
+                        'Learned embeddings performed better',
+                        'Sinusoidal encodings improved extrapolation', 
+                        'Positional information hurt performance',
+                        'No significant difference was found'
+                      ],
+                      correctAnswer: 3,
+                      explanation: 'Learned and sinusoidal encodings performed similarly (Section 3.5).'
+                    },
+                    {
+                      id: 'q25',
+                      text: 'What key limitation of convolutional architectures does the Transformer address?',
+                      options: [
+                        'Inability to handle variable-length sequences',
+                        'Exponential growth of operations with distance', 
+                        'Lack of parallelization capabilities',
+                        'High memory consumption'
+                      ],
+                      correctAnswer: 1,
+                      explanation: 'Convolutional layers require O(n/k) layers to connect all positions vs Transformers O(1) operations (Section 4).'
+                    }
+                  ]
+                }
+              }
+            ]
           }
         ]
     },

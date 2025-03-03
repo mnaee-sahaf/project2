@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Home, BookOpen, Activity, LogOut, LogIn, DownloadCloud, ChevronRight, ChevronLeft, Computer, Menu, X } from 'lucide-react';
+import { Home, BookOpen, Activity, LogOut, LogIn, DownloadCloud, ChevronRight, ChevronLeft, Computer, Menu, X, MapIcon } from 'lucide-react';
 import { NavLink, Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 
@@ -84,6 +84,8 @@ export function Navigation() {
             <NavItem to="/practice" icon={<Activity size={20} />} label="Practice" collapsed={isCollapsed} />
             <NavItem to="/liveClass" icon={<Computer size={20} />} label="Live Class" collapsed={isCollapsed} />
             <NavItem to="/resources" icon={<DownloadCloud size={20} />} label="Resources" collapsed={isCollapsed} />
+            <NavItem to="/roadmap" icon={<MapIcon size={20} />} label="Roadmap" collapsed={isCollapsed} />
+
           </div>
           
           {/* Sign In/Sign Out */}

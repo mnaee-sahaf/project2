@@ -15,6 +15,7 @@ import { Resources } from './pages/Resources';
 import { Footer } from './components/Footer';
 import { Header } from './components/Header';
 import LiveClass from './pages/LiveClass';
+import Roadmap from './pages/Roadmap';
 
 function AppLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
@@ -50,6 +51,7 @@ function App() {
         <Route path="/practice" element={<AppLayout><Practice /></AppLayout>} />
         <Route path="/liveClass" element={<AppLayout><LiveClass /></AppLayout>} />
         <Route path="/resources" element={<AppLayout><Resources/></AppLayout>} />
+        <Route path="/roadmap" element={<AppLayout><Roadmap/></AppLayout>} />
       </Routes>
     </AuthProvider>
   );

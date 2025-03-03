@@ -1,3 +1,5 @@
+
+
 export function Footer() {
     return (
       <footer className="w-full bg-white border border-gray-200 hidden md:block">
@@ -29,7 +31,6 @@ export function Footer() {
                 </li>
                 <li>
                   <a href="/roadmap" className="text-gray-700 hover:text-[#4F47E5] transition-colors">
-                    Roadmap
                   </a>
                 </li>
               </ul>

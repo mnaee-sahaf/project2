@@ -188,7 +188,7 @@ export function Progress() {
             <div className="text-center py-8 bg-white rounded-lg border border-gray-200">
               <p className="text-gray-500">No lessons completed yet</p>
               {!user && (
-                <p className="text-sm text-indigo-600 mt-2">Sign in to track your progress</p>
+                <p className="text-sm text-indigo-600 mt-2"><a href='/auth/login'>Sign in to track your progress</a></p>
               )}
             </div>
           )}
