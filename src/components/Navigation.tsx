@@ -60,7 +60,7 @@ export function Navigation() {
                 }
               }}
             >
-              ML Academy
+              Interactive ML
             </Link>
             <div>
               <button
